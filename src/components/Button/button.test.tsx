@@ -1,6 +1,7 @@
 import { render, fireEvent } from "@testing-library/react";
-import Button, { type ButtonProps, ButtonSize, ButtonType } from "./button";
+import Button, { type ButtonProps, ButtonType } from "./button";
 import "@testing-library/jest-dom";
+import type { ButtonSize } from './button';
 
 const defaultProps = {
   onClick: jest.fn(),
@@ -8,7 +9,7 @@ const defaultProps = {
 
 const testProps: ButtonProps = {
   btnType: ButtonType.Primary,
-  size: ButtonSize.Large,
+  size: "lg" as ButtonSize, // 使用类型断言来指定 ButtonSize
   className: "class",
 };
 

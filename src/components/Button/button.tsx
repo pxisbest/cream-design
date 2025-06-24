@@ -1,10 +1,10 @@
 import React from "react";
 import classNames from "classnames";
 
-export enum ButtonSize {
-  Large = "lg",
-  Small = "sm",
-}
+// export enum ButtonSize {
+//   Large = "lg",
+//   Small = "sm",
+// }
 
 export enum ButtonType {
   Primary = "primary",
@@ -12,7 +12,7 @@ export enum ButtonType {
   Danger = "danger",
   Link = "link",
 }
-
+export type ButtonSize="lg"|"sm"|"";
 //创建props
 interface BaseButtonProps {
   className?: string;
@@ -39,7 +39,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     href,
     ...restProps
   } = props;
-  
+
   //btn,btn-lg,btn-primary
   const classes = classNames("btn", className, {
     [`btn-${btnType}`]: btnType,
