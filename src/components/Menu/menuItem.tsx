@@ -36,5 +36,5 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     </li>
   );
 };
-
+MenuItem.displayName = "MenuItem"; //方便调试
 export default MenuItem;
