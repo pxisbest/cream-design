@@ -1,6 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 import { useState, createContext } from "react";
+import { render } from '@testing-library/react';
+import type { MenuItemProps } from './menuItem';
 
 type MenuMode = "horizontal" | "vertical";
 //onSelect?用了两次，可以直接写成一个type简化
@@ -36,6 +38,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const classes = classNames("cream-menu", className, {
     //如果 mode 是 vertical，就会加上 menu-vertical。
     [`menu-vertical`]: mode === "vertical",
+    [`menu-horizontal`]: mode !== "vertical",
   });
   const handleClick = (index: number) => {
     setActive(index);
@@ -47,11 +50,25 @@ const Menu: React.FC<MenuProps> = (props) => {
     index: currentActive,
     onSelect: handleClick,
   };
+  const renderChildren = () => {
+    //传入了children
+    return React.Children.map(children, (child, index) => {
+      //确保子元素是MenuItem
+      const childElement = child as React.ReactElement<MenuItemProps>;
+      if (childElement.type && (childElement.type as any).displayName === "MenuItem"||"SubMenu") {
+        return React.cloneElement(childElement, {
+          index
+        });
+      }else{
+        console.log('warning: Menu has a child which is not a MenuItem component');
+      }
+    });
+  }
   return (
     <ul className={classes} style={style} data-testid='test-menu'>
       {/* 传递上下文给子组件 */}
       <MenuContext.Provider value={passedContext}>
-        {children}
+        {renderChildren()}
       </MenuContext.Provider>
     </ul>
   );

@@ -1,33 +1,26 @@
 import Button, { ButtonType } from "./components/Button/button";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
+import SubMenu from "./components/Menu/subMenu";
 
 function App() {
   return (
     <>
-      <Menu defaultIndex={0} onSelect={(index)=>{alert(index)}}>
-        <MenuItem index={1}>Cool Link</MenuItem>
-        <MenuItem index={2}>Cool Link2</MenuItem>
-        <MenuItem index={3}>Cool Link 3</MenuItem>
-        <MenuItem index={2}>Active</MenuItem>
-        <MenuItem index={0}>Active</MenuItem>
-      </Menu>
-
-      <Button disabled>Hello</Button>
-      <Button btnType={ButtonType.Primary} size={"lg"}>
-        Hello
-      </Button>
-      <Button btnType={ButtonType.Danger}>Danger Button</Button>
-      <Button btnType={ButtonType.Link} href="http://www.baidu.com">
-        Baidu
-      </Button>
-      <Button
-        btnType={ButtonType.Link}
-        disabled={true}
-        href="http://www.baidu.com"
+      <Menu mode="vertical"
+        onSelect={(index) => {
+          alert(index);
+        }}
       >
-        Disabled Link
-      </Button>
+        <SubMenu title="Dropdown">
+        <MenuItem>dropdown1</MenuItem>
+        <MenuItem>dropdown2</MenuItem>
+        <MenuItem>dropdown3</MenuItem>
+        </SubMenu>
+        <MenuItem>Cool Link</MenuItem>
+        <MenuItem>Cool Link2</MenuItem>
+        <MenuItem>Cool Link 3</MenuItem>
+        <MenuItem>Active</MenuItem>
+      </Menu>
     </>
   );
 }

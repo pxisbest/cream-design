@@ -22,12 +22,12 @@ const testVerProps: MenuProps = {
 const generateMenu = (props: MenuProps) => {
   return (
     <Menu {...props}>
-      <MenuItem index={0}>Active</MenuItem>
-      <MenuItem disabled index={1}>
+      <MenuItem>Active</MenuItem>
+      <MenuItem disabled>
         disabled
       </MenuItem>
-      <MenuItem index={2}>Cool Link2</MenuItem>
-      <MenuItem index={3}>Cool Link 3</MenuItem>
+      <MenuItem>Cool Link2</MenuItem>
+      <MenuItem>Cool Link 3</MenuItem>
     </Menu>
   );
 };

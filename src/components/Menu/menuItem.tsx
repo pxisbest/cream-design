@@ -3,7 +3,7 @@ import { MenuContext } from "./menu";
 import { useContext } from "react";
 
 export interface MenuItemProps {
-  index: number; //高亮，和defaultindex对比
+  index?: number; //高亮，和defaultindex对比
   className?: string; //自定义类名
   disabled?: boolean; //是否禁用
   style?: React.CSSProperties; //样式
@@ -21,7 +21,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     "is-active": context.index === index,//true的时候选中
   });
   const handleClick = () => {
-    if (context.onSelect && !disabled) {
+    if (context.onSelect && !disabled && typeof index === 'number') {
       context.onSelect(index); //确保index是number类型
     }
   };
@@ -36,5 +36,5 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     </li>
   );
 };
-MenuItem.displayName = "MenuItem"; //方便调试
+MenuItem.displayName = "MenuItem"; //react静态属性帮助判断类型，方便调试
 export default MenuItem;

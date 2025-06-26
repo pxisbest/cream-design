@@ -23,6 +23,7 @@
         border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
       }
     }
+    //它变成了一个定位参考点（containing block），供它里面的子元素（比如 .cream-submenu）使用。
     .submenu-item {
       position: relative;
       .submenu-title {
@@ -49,12 +50,13 @@
         transform: rotate(180deg) !important;
       }
     }
+    //下拉菜单
     .cream-submenu {
       //display: none;
       list-style:none;
       padding-left: 0;
       white-space: nowrap;
-      //transition: $menu-transition;
+      transition: $menu-transition;
       .menu-item {
         padding: $menu-item-padding-y $menu-item-padding-x;
         cursor: pointer;
@@ -65,19 +67,24 @@
         }
       }
     }
-    // .cream-submenu.menu-opened {
-    //   //display: block;
-    // }
+     .cream-submenu.menu-opened {
+      display: block;
+     }
   }
+  //水平模式下
   .menu-horizontal {
     >.menu-item {
       border-bottom: $menu-item-active-border-width solid transparent;
     }
+    //.cream-submenu（下拉菜单）要 脱离普通文档流，自由地浮动在页面上。
+    //.cream-submenu 是子菜单，设置了 position: absolute，于是它会相对于 .submenu-item 进行定位
     .cream-submenu {
       position: absolute;
       background: $white;
       z-index: 100;
+      //在 .submenu-item 的底部往下偏移 8px
       top: calc(100% + 8px);
+      //表示左对齐
       left: 0;
       border: $menu-border-width solid $menu-border-color;
       box-shadow: $submenu-box-shadow;
