@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import classNames from "classnames";
 import { MenuContext } from "./menu"; // 上下文
 import type { MenuItemProps } from "./menuItem";
+import Icon from "../Icon/icon";
 
 export interface SubMenuProps {
   index?: string; //子菜单的索引
@@ -48,6 +49,8 @@ const SubMenu: React.FC<SubMenuProps> = ({
       : {};
   const classes = classNames("menu-item submenu-item", className, {
     "is-active": context.index === index, // 如果当前菜单项被选中
+    "is-opened": menuOpen, // 如果子菜单展开
+    "is-vertical": context.mode === "vertical", // 如果是垂直模式
   });
   //确保子元素是MenuItem,需要对子元素进行处理
   const renderchildren = () => {
@@ -73,6 +76,7 @@ const SubMenu: React.FC<SubMenuProps> = ({
     <li key={index} className={classes} {...hoverEvents}>
       <div className="submenu-title" {...clickEvents}>
         {title}
+      <Icon icon='angle-down' className ='arrow-icon'></Icon>
       </div>
       {renderchildren()}
     </li>

@@ -4,10 +4,10 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 library.add(fas);
 import { library } from "@fortawesome/fontawesome-svg-core";
 import Icon from "./components/Icon/icon";
-// import Menu from "./components/Menu/menu";
-// import MenuItem from "./components/Menu/menuItem";
-// import SubMenu from "./components/Menu/subMenu";
-// import type from '@testing-library/react';
+import Menu from "./components/Menu/menu";
+import MenuItem from "./components/Menu/menuItem";
+import SubMenu from "./components/Menu/subMenu";
+
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Icon icon="arrow-down" theme="danger" size="xl"></Icon>
       {/* <Alert type={"success"} title="this is alert"></Alert>
     <Alert type={"warning"} title="this is alert" description="hi" closable={false}></Alert> */}
-      {/* <Menu
+      <Menu
         mode="vertical"
         defaultIndex="0"
         defaultOpenSubMenus={["2"]} //默认展开的子菜单
@@ -32,7 +32,7 @@ function App() {
         </SubMenu>
         <MenuItem>Cool Link 3</MenuItem>
         <MenuItem>Active</MenuItem>
-      </Menu> */}
+      </Menu>
     </>
   );
 }
