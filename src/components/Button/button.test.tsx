@@ -1,14 +1,15 @@
 import { render, fireEvent } from "@testing-library/react";
-import Button, { type ButtonProps, ButtonType } from "./button";
+import Button, { type ButtonProps, type ButtonType } from "./button";
 import "@testing-library/jest-dom";
 import type { ButtonSize } from './button';
+
 
 const defaultProps = {
   onClick: jest.fn(),
 };
 
 const testProps: ButtonProps = {
-  btnType: ButtonType.Primary,
+  btnType: 'primary',
   size: "lg" as ButtonSize, // 使用类型断言来指定 ButtonSize
   className: "class",
 };
@@ -16,7 +17,7 @@ const testProps: ButtonProps = {
 const disabledProps: ButtonProps = {
   disabled: true,
   onClick: jest.fn(),
-  btnType: ButtonType.Link,
+  btnType: 'link',
 };
 
 describe("test button component", () => {
@@ -37,7 +38,7 @@ describe("test button component", () => {
   });
   it("should render a link when btnType is link and href is provided", () => {
     const wrapper = render(
-      <Button btnType={ButtonType.Link} href="http://www.baidu.com">
+      <Button btnType='link' href="http://www.baidu.com">
         Link
       </Button>
     );

@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import classNames from "classnames";
 import { MenuContext } from "./menu"; // 上下文
 import type { MenuItemProps } from "./menuItem";
 import Icon from "../Icon/icon";
+import Transition from "../Transition/transition";
 
 export interface SubMenuProps {
   index?: string; //子菜单的索引
@@ -19,7 +20,10 @@ const SubMenu: React.FC<SubMenuProps> = ({
 }) => {
   const context = useContext(MenuContext); // 获取上下文
   const openedSubMenus = context.defaultOpenSubMenus as Array<string>; // 判断是否是垂直模式
-  const isOpen = (index && context.mode === "vertical") ? openedSubMenus.includes(index) : false; 
+  const isOpen =
+    index && context.mode === "vertical"
+      ? openedSubMenus.includes(index)
+      : false;
   // 如果是垂直模式，且 openedSubMenus 里包含了这个 SubMenu 的 index，就让它初始状态是展开的。
   const [menuOpen, setmenuOpen] = useState(isOpen); // 控制子菜单的展开和收起
   const handleClick = (e: React.MouseEvent) => {
@@ -52,6 +56,7 @@ const SubMenu: React.FC<SubMenuProps> = ({
     "is-opened": menuOpen, // 如果子菜单展开
     "is-vertical": context.mode === "vertical", // 如果是垂直模式
   });
+  const nodeRef = useRef<HTMLUListElement>(null);
   //确保子元素是MenuItem,需要对子元素进行处理
   const renderchildren = () => {
     const subMenuClasses = classNames("cream-submenu", {
@@ -61,22 +66,30 @@ const SubMenu: React.FC<SubMenuProps> = ({
       const childElement = child as React.ReactElement<MenuItemProps>;
       if ((childElement.type as any).displayName === "MenuItem") {
         return React.cloneElement(childElement, {
-            index: `${index}-${i}`, // 确保子菜单项有唯一的索引
-        })
-        
+          index: `${index}-${i}`, // 确保子菜单项有唯一的索引
+        });
       } else {
         console.error(
           "Warning: SubMenu has a child which is not a MenuItem component"
         );
       }
     });
-    return <ul className={subMenuClasses}>{childrenComponent}</ul>;
+    return (
+      <Transition
+        in={menuOpen}
+        timeout={300}
+        animation="zoom-in-top"
+        nodeRef={nodeRef}
+      >
+        <ul className={subMenuClasses}>{childrenComponent}</ul>
+      </Transition>
+    );
   };
   return (
     <li key={index} className={classes} {...hoverEvents}>
       <div className="submenu-title" {...clickEvents}>
         {title}
-      <Icon icon='angle-down' className ='arrow-icon'></Icon>
+        <Icon icon="angle-down" className="arrow-icon"></Icon>
       </div>
       {renderchildren()}
     </li>

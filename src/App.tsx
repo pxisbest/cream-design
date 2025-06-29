@@ -7,33 +7,32 @@ import Icon from "./components/Icon/icon";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
+import Button from "./components/Button/button";
 
+import { useState } from "react";
+import Transition from "./components/Transition/transition";
 
 function App() {
+  const [show, setshow] = useState(false);
   return (
     <>
-      <Icon icon="arrow-down" theme="danger" size="xl"></Icon>
-      {/* <Alert type={"success"} title="this is alert"></Alert>
-    <Alert type={"warning"} title="this is alert" description="hi" closable={false}></Alert> */}
-      <Menu
-        mode="vertical"
-        defaultIndex="0"
-        defaultOpenSubMenus={["2"]} //默认展开的子菜单
-        onSelect={(index) => {
-          alert(index);
-        }}
-      >
-        <MenuItem>Cool Link</MenuItem>
-        <MenuItem>Cool Link2</MenuItem>
-        <SubMenu title="Dropdown" index="1">
-          <MenuItem>dropdown1</MenuItem>
-          <MenuItem>dropdown2</MenuItem>
-          <MenuItem>dropdown3</MenuItem>
-        </SubMenu>
-        <MenuItem>Cool Link 3</MenuItem>
-        <MenuItem>Active</MenuItem>
-      </Menu>
+      <Button size="lg" onClick={() => setshow(!show)}>
+        toggle
+      </Button>
+      <Transition in={show} timeout={300} animation="zoom-in-top">
+        <div>
+          <p>Edit</p>
+          <p>Edit</p>
+          <p>Edit</p>
+          <p>Edit</p>
+        </div>
+      </Transition>
+
+      <Transition wrapper in={show} timeout={300} animation="zoom-in-top">
+      <Button btnType="primary" size='lg'>Large Button</Button>
+    </Transition>
     </>
+   
   );
 }
 
