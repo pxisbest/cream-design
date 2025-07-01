@@ -1,10 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-
-// export enum ButtonSize {
-//   Large = "lg",
-//   Small = "sm",
-// }
+import "./_style.scss";
 
 export type ButtonType = "primary" | "default" | "danger" | "link";
 export type ButtonSize = "lg" | "sm";
@@ -24,7 +20,7 @@ type AnchorButtonProps = React.AnchorHTMLAttributes<HTMLElement> &
   BaseButtonProps;
 
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
-const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<ButtonProps> = (props) => {
   const {
     className,
     disabled = false, //默认值为false

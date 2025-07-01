@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react-vite'
-
+import {fas} from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import '../src/styles/index.scss';
 const preview: Preview = {
   parameters: {
     controls: {
