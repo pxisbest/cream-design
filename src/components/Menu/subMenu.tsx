@@ -4,6 +4,8 @@ import { MenuContext } from "./menu"; // 上下文
 import type { MenuItemProps } from "./menuItem";
 import Icon from "../Icon/icon";
 import Transition from "../Transition/transition";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+
 
 export interface SubMenuProps {
   index?: string; //子菜单的索引
@@ -89,7 +91,7 @@ const SubMenu: React.FC<SubMenuProps> = ({
     <li key={index} className={classes} {...hoverEvents}>
       <div className="submenu-title" {...clickEvents}>
         {title}
-        <Icon icon="angle-down" className="arrow-icon"></Icon>
+        <Icon icon={faAngleDown} className="arrow-icon"></Icon>
       </div>
       {renderchildren()}
     </li>

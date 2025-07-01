@@ -1,25 +1,25 @@
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
+$white:    #ffffff !default;  // 马卡龙系依旧保持纯白为主
+$gray-100: #fef9f5 !default;  // 淡米色底
+$gray-200: #f8f3ef !default;
+$gray-300: #efe7df !default;
+$gray-400: #e5dcd4 !default;
+$gray-500: #cbbfb3 !default;
+$gray-600: #a8988d !default;
+$gray-700: #86796f !default;
+$gray-800: #655a52 !default;
+$gray-900: #433d37 !default;
+$black:    #2b2722 !default;
 
-$blue:    #0d6efd !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #fadb14 !default;
-$green:   #52c41a !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+$blue:    #85caff !default;  // 马卡龙蓝
+$indigo:  #a593e0 !default;  // 马卡龙靛蓝紫
+$purple:  #c59be9 !default;  // 马卡龙紫
+$pink:    #f7a6b8 !default;  // 马卡龙粉
+$red:     #f58b8b !default;  // 马卡龙红
+$orange:  #ffc48b !default;  // 马卡龙橙
+$yellow:  #ffe299 !default;  // 马卡龙黄
+$green:   #9ee9a7 !default;  // 马卡龙绿
+$teal:    #96e6d2 !default;  // 马卡龙青
+$cyan:    #8ee7f0 !default;  // 马卡龙青蓝
 
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;

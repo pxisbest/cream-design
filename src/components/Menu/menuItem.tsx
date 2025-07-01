@@ -12,17 +12,17 @@ export interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
   const { index, className, disabled, style, children } = props;
-  
+
   const context = useContext(MenuContext);
 
   const classes = classNames("menu-item", className, {
     "is-disabled": disabled,
     //从父组件Menu中获取当前选中项的索引
-    "is-active": context.index === index,//true的时候选中
+    "is-active": context.index === index, //true的时候选中
   });
   const handleClick = () => {
-    if (context.onSelect && !disabled && typeof index === 'string') {
-      context.onSelect(index); 
+    if (context.onSelect && !disabled && typeof index === "string") {
+      context.onSelect(index);
     }
   };
   return (
