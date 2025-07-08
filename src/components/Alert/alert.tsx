@@ -4,7 +4,7 @@ import classNames from "classnames";
 interface AlertProps {
   className?: string; //自定义类名
   title: string;
-  type?: "success" | "error" | "warning" | "default"; //警告类型
+  type?: "success" | "danger" | "warning" | "default"; //警告类型
   description?: string; //描述信息
   closable?: boolean; //是否可关闭
   onClose?: () => void; // 可选关闭回调
