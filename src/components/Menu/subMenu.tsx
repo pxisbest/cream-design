@@ -81,7 +81,8 @@ const SubMenu: React.FC<SubMenuProps> = ({
         in={menuOpen}
         timeout={300}
         animation="zoom-in-top"
-        nodeRef={nodeRef}
+        // nodeRef={nodeRef}
+        wrapper
       >
         <ul className={subMenuClasses}>{childrenComponent}</ul>
       </Transition>
