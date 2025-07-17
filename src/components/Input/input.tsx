@@ -34,14 +34,16 @@ export const Input: React.FC<InputProps> = (props) => {
     "input-group-prepend": !!prepend, //如果有前缀，则添加input-group-prepand类名
     "input-group-append": !!append, //如果有后缀，则添加input-group-append类名
   });
+  //fixControlledValue 函数把 null 或 'undefined' 统一转换成 ''，确保底层原生 <input> 始终拿到合法的字符串，避免 React 控制模式下报错
   const fixControlledValue = (value: any) => {
-    if (value === null || value === "undefined") {
+    if (value === null || value === undefined) {
       return "";
     }
     return value;
   };
-  //   避免同时把 value 和 defaultValue 都传给原生 <input>，从而引发 React 的混用警告和潜在的状态不一致问题
-  if ("value" in props) {
+  //避免同时把 value 和 defaultValue 都传给原生 <input>，从而引发 React 的混用警告和潜在的状态不一致问题
+  const isControlled = props.value !== undefined;
+  if (isControlled) {
     delete restProps.defaultValue; //如果是受控组件，删除defaultValue属性
     restProps.value = fixControlledValue(props.value); //如果是受控组件，确保value是一个字符串
   }
@@ -50,13 +52,13 @@ export const Input: React.FC<InputProps> = (props) => {
     <div className={classes} style={style}>
       {prepend && <div className="cream-input-group-prepend">{prepend}</div>}
       {/* 可选图标 */}
-      {icon && <div className="icon-wrapper"><Icon icon={icon} title={`title-${icon}`}/></div>}
+      {icon && (
+        <div className="icon-wrapper">
+          <Icon icon={icon} title={`title-${icon}`} />
+        </div>
+      )}
       {/* input元素 */}
-      <input
-        className="cream-input-inner"
-        disabled={disabled}
-        {...restProps}
-      />
+      <input className="cream-input-inner" disabled={disabled} {...restProps} />
       {append && <div className="cream-input-group-append">{append}</div>}
     </div>
   );
