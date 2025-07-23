@@ -2,6 +2,7 @@ import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   "stories": [
+    "../src/welcome.stories.tsx", // 将欢迎页放在第一个
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
