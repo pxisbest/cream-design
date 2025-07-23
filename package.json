@@ -23,12 +23,8 @@
     "build-css": "sass ./src/styles/index.scss ./dist/index.css",
     "chromatic": "npx chromatic --project-token=chpt_84108a2f8804a45",
     "lint:fix": "eslint src --fix",
-    "format": "prettier --write ."
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run test:nowatch && npm run lint"
-    }
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
