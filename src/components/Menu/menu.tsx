@@ -1,8 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { useState, createContext } from "react";
-import { render } from '@testing-library/react';
-import type { MenuItemProps } from './menuItem';
+import type { MenuItemProps } from "./menuItem";
 
 type MenuMode = "horizontal" | "vertical";
 //onSelect?用了两次，可以直接写成一个type简化
@@ -25,7 +24,7 @@ interface IMenuContext {
   defaultOpenSubMenus?: string[]; //默认展开的子菜单
 }
 //创建上下文
-export const MenuContext = createContext<IMenuContext>({ index:' 0' });
+export const MenuContext = createContext<IMenuContext>({ index: " 0" });
 
 const Menu: React.FC<MenuProps> = (props) => {
   const {
@@ -51,9 +50,9 @@ const Menu: React.FC<MenuProps> = (props) => {
     }
   };
   const passedContext: IMenuContext = {
-    index: currentActive?currentActive:'0',
+    index: currentActive ? currentActive : "0",
     onSelect: handleClick,
-    mode:mode,
+    mode: mode,
     defaultOpenSubMenus: defaultOpenSubMenus, //传递默认展开的子菜单
   };
   const renderChildren = () => {
@@ -61,17 +60,23 @@ const Menu: React.FC<MenuProps> = (props) => {
     return React.Children.map(children, (child, index) => {
       //确保子元素是MenuItem
       const childElement = child as React.ReactElement<MenuItemProps>;
-      if (childElement.type && (childElement.type as any).displayName === "MenuItem"||"SubMenu") {
+      if (
+        childElement.type &&
+        ((childElement.type as any).displayName === "MenuItem" ||
+          (childElement.type as any).displayName === "SubMenu")
+      ) {
         return React.cloneElement(childElement, {
-          index:index.toString(), //将索引转换为字符串
+          index: index.toString(), //将索引转换为字符串
         });
-      }else{
-        console.log('warning: Menu has a child which is not a MenuItem component');
+      } else {
+        console.log(
+          "warning: Menu has a child which is not a MenuItem component"
+        );
       }
     });
-  }
+  };
   return (
-    <ul className={classes} style={style} data-testid='test-menu'>
+    <ul className={classes} style={style} data-testid="test-menu">
       {/* 传递上下文给子组件 */}
       <MenuContext.Provider value={passedContext}>
         {renderChildren()}

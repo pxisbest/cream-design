@@ -3,7 +3,6 @@
 //例子用法：
 //const [searchTerm, setSearchTerm] = useState('');
 //const debouncedTerm = useDebounce(searchTerm, 500);
-import React from 'react';
 import { useEffect, useState } from "react"
 const useDebounce = (value: any, delay: number=300) => {
     const [debouncedValue, setDebouncedValue] = useState(value);
