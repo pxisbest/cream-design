@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta = {
-  title: "欢迎 | Welcome",
+  title: "Welcome",
   parameters: {
     docs: {
       description: {
@@ -20,7 +20,7 @@ export default meta;
 
 type Story = StoryObj;
 
-export const 欢迎: Story = {
+export const Welcome: Story = {
   render: () => (
     <div
       style={{
