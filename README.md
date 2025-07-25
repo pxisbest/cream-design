@@ -1,6 +1,7 @@
 # Cream Design
 
 一个轻量级的 React UI 组件库，使用 TypeScript + Vite 构建，适合快速开发现代 Web 应用。
+在线预览：cream-design.netlify.app
 
 ## 特性
 

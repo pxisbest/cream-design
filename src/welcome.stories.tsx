@@ -41,6 +41,18 @@ export const Welcome: Story = {
         一个轻量级的 React UI 组件库，使用 TypeScript + Vite
         构建，适合快速开发现代 Web 应用。
       </p>
+      <a
+        href="https://cream-design.netlify.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          fontSize: "1rem",
+          textDecoration: "underline",
+          display: "inline-block",
+        }}
+      >
+        在线预览组件
+      </a>
       <ul style={{ paddingLeft: 20 }}>
         <li>🚀 常用 UI 组件封装（Button、Input、Menu、AutoComplete 等）</li>
         <li>💡 全量 TypeScript 支持，类型声明完整</li>
