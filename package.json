@@ -1,6 +1,6 @@
 {
   "name": "cream-design",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "type": "module",
   "main": "dist/index/index.cjs.js",
   "module": "dist/index/index.es.js",
