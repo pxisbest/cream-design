@@ -2,9 +2,51 @@
   "name": "cream-design",
   "version": "0.1.7",
   "type": "module",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
+  "main": "dist/index/index.cjs.js",
+  "module": "dist/index/index.es.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index/index.es.js",
+      "require": "./dist/index/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./Button": {
+      "import": "./dist/Button/index.es.js",
+      "require": "./dist/Button/index.cjs.js",
+      "types": "./dist/Button.d.ts"
+    },
+    "./Alert": {
+      "import": "./dist/Alert/index.es.js",
+      "require": "./dist/Alert/index.cjs.js",
+      "types": "./dist/Alert.d.ts"
+    },
+    "./Input": {
+      "import": "./dist/Input/index.es.js",
+      "require": "./dist/Input/index.cjs.js",
+      "types": "./dist/Input.d.ts"
+    },
+    "./Menu": {
+      "import": "./dist/Menu/index.es.js",
+      "require": "./dist/Menu/index.cjs.js",
+      "types": "./dist/Menu.d.ts"
+    },
+    "./Icon": {
+      "import": "./dist/Icon/index.es.js",
+      "require": "./dist/Icon/index.cjs.js",
+      "types": "./dist/Icon.d.ts"
+    },
+    "./AutoComplete": {
+      "import": "./dist/AutoComplete/index.es.js",
+      "require": "./dist/AutoComplete/index.cjs.js",
+      "types": "./dist/AutoComplete.d.ts"
+    },
+    "./Transition": {
+      "import": "./dist/Transition/index.es.js",
+      "require": "./dist/Transition/index.cjs.js",
+      "types": "./dist/Transition.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
