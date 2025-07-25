@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
 .cream-input-wrapper {
   display: flex; //display: flex; width:100%：让内部元素（图标、输入框、前/后缀）在同一行横向排列，并且容器占满可用宽度。
   width: 100%;

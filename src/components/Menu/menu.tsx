@@ -1,3 +1,4 @@
+import "./_style.scss";
 import React from "react";
 import classNames from "classnames";
 import { useState, createContext } from "react";

@@ -2,6 +2,7 @@ import React, { type ReactElement, type InputHTMLAttributes } from "react";
 import classNames from "classnames";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import Icon from "../Icon/icon";
+import "./_style.scss";
 
 export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {

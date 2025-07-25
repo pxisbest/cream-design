@@ -1,3 +1,4 @@
+import "./_style.scss";
 import Icon from "../Icon/icon";
 import Input, { type InputProps } from "../Input/input";
 import { useEffect, useRef, useState } from "react";

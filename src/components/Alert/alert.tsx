@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames";
+import "./_style.scss";
 
 interface AlertProps {
   className?: string; //自定义类名
