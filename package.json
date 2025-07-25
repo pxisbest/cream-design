@@ -45,6 +45,9 @@
       "import": "./dist/Transition/index.es.js",
       "require": "./dist/Transition/index.cjs.js",
       "types": "./dist/Transition.d.ts"
+    },
+    "./style": {
+      "default": "./dist/cream-design.css"
     }
   },
   "files": [
