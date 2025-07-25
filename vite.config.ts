@@ -3,7 +3,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import dts from "vite-plugin-dts"; // ✅ 新增：生成类型声明文件
+import dts from "vite-plugin-dts";
+import fs from "fs";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 
 const dirname =
@@ -11,26 +12,45 @@ const dirname =
     ? __dirname
     : path.dirname(fileURLToPath(import.meta.url));
 
+// 获取所有组件入口
+function getComponentEntries() {
+  const componentsDir = path.resolve(__dirname, 'src/components');
+  const entries = {};
+  fs.readdirSync(componentsDir).forEach(name => {
+    const entry = path.join(componentsDir, name, 'index.tsx');
+    if (fs.existsSync(entry)) {
+      entries[name] = entry;
+    }
+  });
+  return entries;
+}
+
 export default defineConfig({
   plugins: [
     react(),
     dts({
-      insertTypesEntry: true, // 在 package.json 中自动插入 "types"
-      outDir: "dist", // 类型文件输出目录
-      include: ["src"], // 👈 明确指定包含的源码目录
-      tsconfigPath: "./tsconfig.build.json", // 👈 指定 tsconfig 路径
+      insertTypesEntry: true,
+      outDir: "dist/types",
+      include: ["src"],
+      tsconfigPath: "./tsconfig.build.json",
     }),
   ],
   build: {
     lib: {
-      entry: "./src/index.tsx",
-      name: "CreamDesign",
+      entry: path.resolve(__dirname, 'src/index.tsx'),
+      name: 'CreamDesign',
+      formats: ['es', 'cjs'],
       fileName: (format) => `index.${format}.js`,
-      formats: ["es", "cjs"],
     },
     rollupOptions: {
+      input: {
+        index: path.resolve(__dirname, 'src/index.tsx'),
+        ...getComponentEntries(),
+      },
       external: ["react", "react-dom"],
       output: {
+        preserveModules: true,
+        preserveModulesRoot: 'src',
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
