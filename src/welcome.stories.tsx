@@ -72,7 +72,7 @@ export const Welcome: Story = {
         <li>
           <strong>引入样式</strong>
           <pre style={{ background: "#f5f5f5", padding: 12, borderRadius: 6 }}>
-            <code>import 'cream-design/dist/cream-design.css';</code>
+            <code>import 'cream-design/style';</code>
           </pre>
         </li>
         <li>
