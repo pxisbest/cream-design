@@ -46,9 +46,7 @@
       "require": "./dist/Transition/index.cjs.js",
       "types": "./dist/Transition.d.ts"
     },
-    "./style": {
-      "default": "./dist/cream-design.css"
-    }
+    "./style": "./dist/cream-design.css"
   },
   "files": [
     "dist"
