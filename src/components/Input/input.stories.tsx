@@ -26,7 +26,7 @@ A basic Input element.
 ## 引用方法 ｜ Usage
 
 \`\`\`js
-import { Input } from 'cream-ui'
+import { Input } from 'cream-design'
 \`\`\`
 
 

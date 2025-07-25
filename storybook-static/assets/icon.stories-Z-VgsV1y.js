@@ -8,7 +8,7 @@ import{j as e}from"./jsx-runtime-D_zvdyIk.js";import"./iframe-BE9v4gsJ.js";impor
 
 **引用方法：**
 \`\`\`ts
-import { Icon } from 'cream-ui';
+import { Icon } from 'cream-design';
 \`\`\`
         `}}},argTypes:{onClick:{action:"clicked"},theme:{description:"支持框架主题，根据主题显示不同的颜色。\n可选值：`primary` | `secondary` | `success` | `info` | `warning` | `danger` | `light` | `dark`",control:!1}}},s={render:()=>e.jsxs("div",{style:{display:"flex",gap:"24px",alignItems:"center"},children:[e.jsx(n,{icon:d,theme:"primary",size:"2x"}),e.jsx(n,{icon:x,theme:"success",size:"2x"}),e.jsx(n,{icon:l,theme:"warning",size:"2x"}),e.jsx(n,{icon:h,theme:"danger",size:"2x"}),e.jsx(n,{icon:o,theme:"info",size:"2x"}),e.jsx(n,{icon:g,theme:"dark",size:"2x"}),e.jsx(n,{icon:o,theme:"light",size:"2x"})]})},i={render:()=>e.jsxs("div",{style:{display:"flex",gap:"32px",alignItems:"center"},children:[e.jsx(n,{icon:a,theme:"info",size:"3x",spin:!0}),e.jsx(n,{icon:a,theme:"warning",pulse:!0,size:"3x"})]})};var r,t,c;s.parameters={...s.parameters,docs:{...(r=s.parameters)==null?void 0:r.docs,source:{originalSource:`{
   render: () => <div style={{

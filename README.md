@@ -22,7 +22,7 @@ npm install cream-design
 
 ```bash
 // 加载样式
-import 'cream-design/dist/cream-design.css';
+import 'cream-design/style';
 // 引入组件
 import { Button } from "cream-design";
 ```

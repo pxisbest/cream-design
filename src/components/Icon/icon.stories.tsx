@@ -30,7 +30,7 @@ const meta: Meta<typeof Icon> = {
 
 **引用方法：**
 \`\`\`ts
-import { Icon } from 'cream-ui';
+import { Icon } from 'cream-design';
 \`\`\`
         `,
       },

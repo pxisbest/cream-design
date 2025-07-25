@@ -18,7 +18,7 @@ A commonly used button element for performing specific interactions.  Supports a
 ## 引用方法 ｜ Usage
 
 \`\`\`js
-import { Button } from 'cream-ui'
+import { Button } from 'cream-design'
 \`\`\`
 
 

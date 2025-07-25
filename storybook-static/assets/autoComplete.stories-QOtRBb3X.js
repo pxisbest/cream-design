@@ -13,7 +13,7 @@ Supports keyboard selection.
 ## 引用方法 ｜ Usage
 
 \`\`\`js
-import { Autocomplete } from 'cream-ui'
+import { Autocomplete } from 'cream-design'
 \`\`\`
 
 

@@ -17,7 +17,7 @@ A commonly used button element for important messages.
 ## 引用方法 ｜ Usage
 
 \`\`\`js
-import { Alert } from 'cream-ui'
+import { Alert } from 'cream-design'
 \`\`\`
 
 
