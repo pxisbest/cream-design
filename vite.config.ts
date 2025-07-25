@@ -30,7 +30,7 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
-      outDir: "dist/types",
+      outDir: "dist", // 直接输出到dist
       include: ["src"],
       tsconfigPath: "./tsconfig.build.json",
     }),
