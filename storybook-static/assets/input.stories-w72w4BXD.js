@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{h as b}from"./index-BlufA3De.js";import{I as n}from"./input-D0X5Jajn.js";import"./iframe-BE9v4gsJ.js";import"./index-yjI3i6yx.js";const A={title:"Input",component:n,decorators:[r=>e.jsx("div",{style:{width:300,padding:20,border:"1px dashed #eee"},children:e.jsx(r,{})})],tags:["autodocs"],parameters:{docs:{description:{component:`
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import{h as b}from"./index-BvNO0jCf.js";import{I as n}from"./input-B5DhV1RW.js";import"./iframe-BufI18ru.js";import"./index-DKS16l0K.js";const A={title:"Input",component:n,decorators:[r=>e.jsx("div",{style:{width:300,padding:20,border:"1px dashed #eee"},children:e.jsx(r,{})})],tags:["autodocs"],parameters:{docs:{description:{component:`
 Input 输入框，通过鼠标或键盘输入内容，是最基础的表单域的包装，支持 HTMLInput 的所有基本属性。
 
 ---

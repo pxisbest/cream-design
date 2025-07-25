@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime-D_zvdyIk.js";import"./iframe-BE9v4gsJ.js";import{I as n,a as d,b as x,c as l,d as h,e as o,g,f as a}from"./index-BlufA3De.js";import"./index-yjI3i6yx.js";const j={title:"Icon",tags:["autodocs"],component:n,parameters:{docs:{description:{component:`
+import{j as e}from"./jsx-runtime-D_zvdyIk.js";import"./iframe-BufI18ru.js";import{I as n,a as d,b as x,c as l,d as h,e as o,g,f as a}from"./index-BvNO0jCf.js";import"./index-DKS16l0K.js";const j={title:"Icon",tags:["autodocs"],component:n,parameters:{docs:{description:{component:`
 提供了一套常用的图标集合，基于 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome#basic)。
 
 支持 \`react-fontawesome\` 的所有属性，可在官方文档查询。
